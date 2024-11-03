@@ -1,0 +1,15 @@
+version: "2.24.6"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: book-summary-server
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploads:/app/uploads
+    environment:
+      - NODE_ENV=development
+    restart: always
